@@ -1,42 +1,46 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import { Link } from "gatsby";
+import styled from "styled-components";
+import React from "react";
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const HeaderWrapper = styled.header`
+  marginbottom: 1.45rem;
+`;
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+const HeaderDiv = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin: 0px auto;
+  max-width: 960px;
+  padding: 1.45rem 1.0875rem;
+`;
+
+const HeaderLink = styled.div`
+  margin-left: 30px;
+`;
+
+const StyledLink = styled(Link)`
+  color: black;
+  text-decoration: none;
+`;
+
+const Header = ({ siteTitle }: { siteTitle: string }) => (
+  <HeaderWrapper>
+    <HeaderDiv>
+      <HeaderLink>
+        <StyledLink to="/">About</StyledLink>
+      </HeaderLink>
+      <HeaderLink>
+        <StyledLink to="/">Projects</StyledLink>
+      </HeaderLink>
+      <HeaderLink>
+        <StyledLink to="/">Contact</StyledLink>
+      </HeaderLink>
+    </HeaderDiv>
+  </HeaderWrapper>
+);
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;

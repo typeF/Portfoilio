@@ -1,7 +1,7 @@
 ---
 title: "Bio"
 date: "2020-02-01"
-type: "bio"
+type: "about"
 ---
 
 Hello. Welcome to my bio.

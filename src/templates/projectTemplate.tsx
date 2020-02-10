@@ -3,12 +3,16 @@ import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 import FadingLine from "../components/fadingline";
 
-export default function ProjectTemplate() {
-  const StyledA = styled.a`
-    color: black;
-    text-decoration: none;
-  `;
+const ProjectDiv = styled.div`
+  min-height: 100vh;
+`;
 
+const StyledA = styled.a`
+  color: black;
+  text-decoration: none;
+`;
+
+export default function ProjectTemplate() {
   const data = useStaticQuery(graphql`
     query ProjectsQuery {
       allMarkdownRemark(filter: { frontmatter: { type: { eq: "project" } } }) {
@@ -39,13 +43,13 @@ export default function ProjectTemplate() {
     const { frontmatter, id, html } = node.node;
     const { github } = frontmatter;
     return (
-      <div className="blog-post" key={id}>
+      <div className="project" key={id}>
         <h1>
           <StyledA href={github}>{frontmatter.title}</StyledA>
         </h1>
         <h2>{frontmatter.date}</h2>
         <div
-          className="blog-post-content"
+          className="project-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>
@@ -53,10 +57,10 @@ export default function ProjectTemplate() {
   });
 
   return (
-    <div className="blog-post-container">
+    <ProjectDiv id="projects" className="blog-post-container">
       <h1>Projects</h1>
       <FadingLine />
       {projects}
-    </div>
+    </ProjectDiv>
   );
 }

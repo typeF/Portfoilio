@@ -27,13 +27,13 @@ const Header = ({ siteTitle }: { siteTitle: string }) => (
   <HeaderWrapper>
     <HeaderDiv>
       <HeaderLink>
-        <StyledLink to="/">About</StyledLink>
+        <StyledLink to="#about">About</StyledLink>
       </HeaderLink>
       <HeaderLink>
-        <StyledLink to="/">Projects</StyledLink>
+        <StyledLink to="#projects">Projects</StyledLink>
       </HeaderLink>
       <HeaderLink>
-        <StyledLink to="/">Contact</StyledLink>
+        <StyledLink to="#contact">Contact</StyledLink>
       </HeaderLink>
     </HeaderDiv>
   </HeaderWrapper>

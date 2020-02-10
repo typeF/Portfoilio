@@ -4,7 +4,7 @@ date: "2020-02-01"
 type: "project"
 github: "https://github.com/typef/mememe"
 url: "franklam.dev"
-img: "../../images/gatsby-astronaut.png"
+screenshot: "../../images/mememe-home.png"
 techStack: "TypeScript React NodeJS GraphQL"
 ---
 

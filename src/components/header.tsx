@@ -1,4 +1,3 @@
-// import { Link } from "gatsby";
 import styled from "styled-components";
 import React from "react";
 
@@ -26,15 +25,15 @@ const StyledLink = styled.a`
 const Header = () => (
   <HeaderWrapper>
     <HeaderDiv>
-      <HeaderLink>
+      {/* <HeaderLink>
         <StyledLink href="#about">About</StyledLink>
-      </HeaderLink>
+      </HeaderLink> */}
       <HeaderLink>
         <StyledLink href="#projects">Projects</StyledLink>
       </HeaderLink>
-      <HeaderLink>
+      {/* <HeaderLink>
         <StyledLink href="#contact">Contact</StyledLink>
-      </HeaderLink>
+      </HeaderLink> */}
     </HeaderDiv>
   </HeaderWrapper>
 );

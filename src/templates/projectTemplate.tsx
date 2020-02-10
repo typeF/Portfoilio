@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Img from "gatsby-image";
 import { useStaticQuery, graphql } from "gatsby";
 import FadingLine from "../components/fadingline";
 import SectionTitle from "../components/sectionTitle";
@@ -9,9 +10,22 @@ const ProjectContainer = styled.div`
 `;
 
 const ProjectDiv = styled.div`
+  margin-bottom: 80px;
+`;
+
+const ProjectDescription = styled.div`
   display: grid;
   grid-gap: 30px;
   grid-template-columns: 1fr 2fr;
+`;
+
+const ProjectImageA = styled.a`
+  margin-bottom: 15px;
+`;
+
+const ProjectImage = styled(Img)`
+  border-radius: 3px;
+  margin-bottom: 15px;
 `;
 
 const ProjectH1 = styled.h1`
@@ -23,7 +37,8 @@ const ProjectH1 = styled.h1`
 `;
 
 const StyledA = styled.a`
-  color: #f61818;
+  color: #fd7d82;
+  // color: #f61818;
   text-decoration: none;
 `;
 
@@ -48,8 +63,12 @@ export default function ProjectTemplate() {
               title
               type
               url
-              img {
-                relativePath
+              screenshot {
+                childImageSharp {
+                  fluid(maxWidth: 920, maxHeight: 240) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
               }
             }
           }
@@ -63,19 +82,25 @@ export default function ProjectTemplate() {
 
   const projects = nodes.map(node => {
     const { frontmatter, id, html } = node.node;
-    const { github, techStack } = frontmatter;
+    const { github, techStack, screenshot } = frontmatter;
+    const featuredImgFluid = screenshot.childImageSharp.fluid;
     return (
       <ProjectDiv className="project" key={id}>
-        <div>
-          <ProjectH1>
-            <StyledA href={github}>{frontmatter.title}</StyledA>
-          </ProjectH1>
-          <StyledP>{techStack}</StyledP>
-        </div>
-        <div
-          className="project-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <ProjectImageA href={github}>
+          <ProjectImage fluid={featuredImgFluid} />
+        </ProjectImageA>
+        <ProjectDescription>
+          <div>
+            <ProjectH1>
+              <StyledA href={github}>{frontmatter.title}</StyledA>
+            </ProjectH1>
+            <StyledP>{techStack}</StyledP>
+          </div>
+          <div
+            className="project-content"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        </ProjectDescription>
       </ProjectDiv>
     );
   });

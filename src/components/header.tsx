@@ -1,4 +1,4 @@
-import { Link } from "gatsby";
+// import { Link } from "gatsby";
 import styled from "styled-components";
 import React from "react";
 
@@ -18,22 +18,22 @@ const HeaderLink = styled.div`
   margin-left: 30px;
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.a`
   color: black;
   text-decoration: none;
 `;
 
-const Header = ({ siteTitle }: { siteTitle: string }) => (
+const Header = () => (
   <HeaderWrapper>
     <HeaderDiv>
       <HeaderLink>
-        <StyledLink to="#about">About</StyledLink>
+        <StyledLink href="#about">About</StyledLink>
       </HeaderLink>
       <HeaderLink>
-        <StyledLink to="#projects">Projects</StyledLink>
+        <StyledLink href="#projects">Projects</StyledLink>
       </HeaderLink>
       <HeaderLink>
-        <StyledLink to="#contact">Contact</StyledLink>
+        <StyledLink href="#contact">Contact</StyledLink>
       </HeaderLink>
     </HeaderDiv>
   </HeaderWrapper>

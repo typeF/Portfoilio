@@ -1,11 +1,11 @@
 ---
 title: "Astrrisk"
-date: "2020-02-01"
+date: "2018-02-10"
 type: "project"
 github: "https://github.com/typef/astrrisk"
 url: "franklam.dev"
 img: "../../images/gatsby-astronaut.png"
-techStack: "typescript, react, graphql"
+techStack: "Javascript React Redux D3.js NodeJS Express"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum dui at tellus bibendum suscipit eu ac lacus. Nunc dictum non nisl non finibus. Mauris gravida nec ipsum ut euismod. Donec imperdiet mauris magna. Suspendisse id luctus est.
+Data visualization of Near Earth Objects using data provided by NASA and featuring a custom-designed graphical UI. Engineered the backend server and frontend architecture with React and Redux, parsed the JSON data and created the radar charts and heatmaps using D3js computations.

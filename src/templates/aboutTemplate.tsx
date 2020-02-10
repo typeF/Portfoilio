@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
+import SectionTitle from "../components/sectionTitle";
 import FadingLine from "../components/fadingline";
 
 const AboutDiv = styled.div`
@@ -30,7 +31,7 @@ export default function AboutTemplate() {
 
   return (
     <AboutDiv id="about" className="about-container">
-      <h1>About</h1>
+      <SectionTitle title={"About"} />
       <FadingLine />
       <div
         className="about-content"

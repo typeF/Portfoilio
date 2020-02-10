@@ -4,4 +4,4 @@ date: "2020-02-01"
 type: "about"
 ---
 
-Hello. Welcome to my bio.
+I'm a Full Stack Web Developer based in Vancouver, BC

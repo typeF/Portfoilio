@@ -5,6 +5,7 @@ const FadingLine = styled.hr`
   border: 0;
   height: 1px;
   margin: 0;
+  margin-bottom: 20px;
   background: rgba(255, 255, 255, 0);
   background-image: linear-gradient(
     to right,

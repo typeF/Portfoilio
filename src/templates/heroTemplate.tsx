@@ -13,10 +13,6 @@ const HeroContent = styled.div`
   bottom: 50px;
 `;
 
-const Name = styled.h1`
-  color: red;
-`;
-
 export default function HeroTemplate() {
   return (
     <HeroDiv className="hero-container">

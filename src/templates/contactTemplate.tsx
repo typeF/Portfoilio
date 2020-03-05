@@ -3,7 +3,22 @@ import styled from "styled-components";
 import FadingLine from "../components/fadingline";
 import SectionTitle from "../components/sectionTitle";
 
-const ContactDiv = styled.div``;
+const ContactContainer = styled.div`
+  margin-top: 250px;
+  border: 1px solid grey;
+  background: white;
+  border-radius: 4px;
+  padding: 50px;
+  box-shadow: 12px 12px rgba(0, 0, 0, 0.4);
+`;
+
+const ContactDiv = styled.div`
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: 1fr 1fr;
+`;
+
+const ContactSocialMedia = styled.div``;
 
 const ContactForm = styled.div``;
 
@@ -11,44 +26,90 @@ const HiddenField = styled.p`
   display: none;
 `;
 
+const ContactFieldDiv = styled.div`
+  margin-bottom: 20px;
+`;
+
+const ContactFormLabel = styled.p`
+  margin-bottom: 0px;
+`;
+
+const ContactFormInput = styled.input`
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2.5px dashed grey;
+  color: #ef4d53;
+  width: 100%;
+`;
+
+const ContactTextArea = styled.textarea`
+  width: 100%;
+  margin-top: 10px;
+  resize: vertical;
+  border: 2.5px dashed grey;
+  border-radius: 3px;
+  padding: 10px;
+`;
+
+const ContactSubmitBtn = styled.button`
+  float: right;
+  cursor: pointer;
+  font-weight: bold;
+  background: white;
+  border: 1px solid grey;
+  border-radius: 3px;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.6);
+  transition: background 0.5s, border 0.5s, color 0.5s;
+  &:hover {
+    background: #ef4d53;
+    color: white;
+    border: 1px solid white;
+  }
+`;
+
 export default function ContactTemplate() {
   return (
-    <ContactDiv id="contact" className="contact-container">
+    <ContactContainer id="contact" className="contact-container">
       <SectionTitle title={"Contact"} />
       <FadingLine />
-      <ContactForm>
-        <form
-          name="contact"
-          method="POST"
-          netlify-honeypot="bot-field"
-          data-netlify="true"
-        >
-          <HiddenField>
-            <label>
-              Dip into the honeypot
-              <input name="bot-field" />
-            </label>
-          </HiddenField>
-          <p>
-            <label>
-              Name: <input type="text" name="name" />
-            </label>
-          </p>
-          <p>
-            <label>
-              Email: <input type="email" name="email" />
-            </label>
-          </p>
-          <p>
-            <label>
-              Message: <textarea name="message"></textarea>
-            </label>
-          </p>
-          <p>
-            <button type="submit">Submit</button>
-          </p>
-        </form>
-      </ContactForm>
-    </ContactDiv>
+      <ContactDiv>
+        <ContactForm>
+          <form
+            name="contact"
+            method="POST"
+            netlify-honeypot="bot-field"
+            data-netlify="true"
+          >
+            <HiddenField>
+              <label>
+                Dip into the honeypot
+                <input name="bot-field" />
+              </label>
+            </HiddenField>
+            <ContactFieldDiv>
+              <ContactFormLabel>Name:</ContactFormLabel>
+              <label>
+                <ContactFormInput type="text" name="name" />
+              </label>
+            </ContactFieldDiv>
+            <ContactFieldDiv>
+              <ContactFormLabel>Email:</ContactFormLabel>
+              <label>
+                <ContactFormInput type="email" name="email" />
+              </label>
+            </ContactFieldDiv>
+            <ContactFieldDiv>
+              <ContactFormLabel>Message:</ContactFormLabel>
+              <label>
+                <ContactTextArea name="message"></ContactTextArea>
+              </label>
+            </ContactFieldDiv>
+            <ContactSubmitBtn>Submit</ContactSubmitBtn>
+          </form>
+        </ContactForm>
+      </ContactDiv>
+      <ContactSocialMedia></ContactSocialMedia>
+    </ContactContainer>
   );
 }

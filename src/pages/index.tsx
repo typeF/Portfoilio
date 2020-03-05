@@ -14,7 +14,7 @@ const IndexPage = () => (
     <HeroTemplate />
     {/* <AboutTemplate /> */}
     <ProjectTemplate />
-    {/* <ContactTemplate /> */}
+    <ContactTemplate />
   </Layout>
 );
 

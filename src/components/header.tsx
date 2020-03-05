@@ -43,9 +43,9 @@ const Header = () => (
       <HeaderLink>
         <StyledLink href="#projects">Projects</StyledLink>
       </HeaderLink>
-      {/* <HeaderLink>
+      <HeaderLink>
         <StyledLink href="#contact">Contact</StyledLink>
-      </HeaderLink> */}
+      </HeaderLink>
     </HeaderDiv>
   </HeaderWrapper>
 );

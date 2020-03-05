@@ -16,12 +16,23 @@ const ProjectContainer = styled.div`
 
 const ProjectDiv = styled.div`
   margin-bottom: 80px;
+  @media (max-width: 450px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const ProjectDescription = styled.div`
   display: grid;
   grid-gap: 30px;
   grid-template-columns: 1fr 2fr;
+  grid-template-areas: "project-info project-desc";
+  @media (max-width: 450px) {
+    grid-gap: 0px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "project-info"
+      "project-desc";
+  }
 `;
 
 const ProjectImageA = styled.a`

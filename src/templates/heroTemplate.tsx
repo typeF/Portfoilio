@@ -18,9 +18,9 @@ const HeroContent = styled.div`
   box-shadow: 12px 12px rgba(0, 0, 0, 0.4);
 `;
 
-const HeroStack = styled.h4`
+const HeroStack = styled.p`
   color: grey;
-  margin-bottom: 10px;
+  margin-bottom: 3px;
   word-spacing: 10px;
 `;
 

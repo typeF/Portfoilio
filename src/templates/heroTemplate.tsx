@@ -18,6 +18,12 @@ const HeroContent = styled.div`
   box-shadow: 12px 12px rgba(0, 0, 0, 0.4);
 `;
 
+const HeroStackDiv = styled.div`
+  @media (max-wdith: 450px) {
+    display: flex;
+  }
+`;
+
 const HeroStack = styled.p`
   color: grey;
   margin-bottom: 3px;
@@ -44,9 +50,11 @@ export default function HeroTemplate() {
         </HeroP>
         <br />
         <h3>Full Stack Web Developer</h3>
-        <HeroStack>JavaScript TypeScript Java Ruby</HeroStack>
-        <HeroStack>React Vue.js NodeJS Express Redux D3.js</HeroStack>
-        <HeroStack>Docker Webpack PostgreSQL MySQL MongoDB GraphQL</HeroStack>
+        <HeroStackDiv>
+          <HeroStack>JavaScript TypeScript Java Ruby</HeroStack>
+          <HeroStack>React Vue.js NodeJS Express Redux D3.js</HeroStack>
+          <HeroStack>Docker Webpack PostgreSQL MySQL MongoDB GraphQL</HeroStack>
+        </HeroStackDiv>
       </HeroContent>
     </HeroDiv>
   );

@@ -67,7 +67,10 @@ const StyledP = styled.p`
 export default function ProjectTemplate() {
   const data = useStaticQuery(graphql`
     query ProjectsQuery {
-      allMarkdownRemark(filter: { frontmatter: { type: { eq: "project" } } }) {
+      allMarkdownRemark(
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: { frontmatter: { type: { eq: "project" } } }
+      ) {
         edges {
           node {
             id

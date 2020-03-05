@@ -186,7 +186,9 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em Montserrat;
+  font: 112.5%/1.45em Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -201,7 +203,8 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: Montserrat;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;

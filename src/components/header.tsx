@@ -19,12 +19,19 @@ const HeaderLink = styled.div`
 
 const StyledLink = styled.a`
   color: black;
+  font-weight: bold;
   text-decoration: none;
   border: 1px solid grey;
   background: white;
   border-radius: 4px;
   padding: 10px;
   box-shadow: 8px 8px rgba(0, 0, 0, 0.4);
+  transition: background 0.5s, color 0.5s;
+  &:hover {
+    border: 1px solid white;
+    background: #ef4d53;
+    color: white;
+  }
 `;
 
 const Header = () => (

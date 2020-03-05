@@ -14,7 +14,7 @@ const HeroContent = styled.div`
   border: 1px solid grey;
   background: white;
   border-radius: 4px;
-  padding: 50px;
+  padding: 50px 50px 35px 50px;
   box-shadow: 12px 12px rgba(0, 0, 0, 0.4);
 `;
 
@@ -24,17 +24,28 @@ const HeroStack = styled.h4`
   word-spacing: 10px;
 `;
 
+const HeroP = styled.p`
+  font-size: 3rem;
+  margin-bottom: 35px;
+`;
+
+const HeroColouredSpan = styled.span`
+  color: #ef4d53;
+  font-weight: bold;
+`;
+
 export default function HeroTemplate() {
   return (
     <HeroDiv className="hero-container">
       <HeroContent>
-        <h1>Hello.</h1>
-        <h1>I&apos;m Frank.</h1>
-        <br />
+        <HeroP>Hello.</HeroP>
+        <HeroP>
+          I&apos;m <HeroColouredSpan>Frank</HeroColouredSpan>.
+        </HeroP>
         <br />
         <h3>Full Stack Web Developer</h3>
-        <HeroStack>Javascript Typescript Java Ruby</HeroStack>
-        <HeroStack>React Redux D3.js NodeJS Express</HeroStack>
+        <HeroStack>JavaScript TypeScript Java Ruby</HeroStack>
+        <HeroStack>React Vue.js NodeJS Express Redux D3.js</HeroStack>
         <HeroStack>Docker Webpack PostgreSQL MySQL MongoDB GraphQL</HeroStack>
       </HeroContent>
     </HeroDiv>

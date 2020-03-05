@@ -38,12 +38,11 @@ const ProjectH1 = styled.h1`
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  margin-bottom: -3px;
+  margin-bottom: 2px;
 `;
 
 const StyledA = styled.a`
-  color: #fd7d82;
-  // color: #f61818;
+  color: #ef4d53;
   text-decoration: none;
 `;
 

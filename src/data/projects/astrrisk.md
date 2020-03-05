@@ -3,7 +3,7 @@ title: "Astrrisk"
 date: "2018-02-10"
 type: "project"
 github: "https://github.com/typef/astrrisk"
-url: "franklam.dev"
+url: "https://astrrisk.franklam.dev"
 screenshot: "../../images/astrrisk-home.png"
 techStack: "JavaScript React Redux D3.js NodeJS Express"
 ---

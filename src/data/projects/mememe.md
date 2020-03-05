@@ -3,7 +3,7 @@ title: "MEMEME"
 date: "2020-02-01"
 type: "project"
 github: "https://github.com/typef/mememe"
-url: "franklam.dev"
+url: "https://mememe.franklam.dev"
 screenshot: "../../images/mememe-home.png"
 techStack: "TypeScript React NodeJS GraphQL"
 ---

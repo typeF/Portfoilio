@@ -11,6 +11,11 @@ const HeroDiv = styled.div`
 const HeroContent = styled.div`
   position: relative;
   bottom: 50px;
+  border: 1px solid grey;
+  background: white;
+  border-radius: 4px;
+  padding: 50px;
+  box-shadow: 12px 12px rgba(0, 0, 0, 0.4);
 `;
 
 const HeroStack = styled.h4`
@@ -27,7 +32,7 @@ export default function HeroTemplate() {
         <h1>I&apos;m Frank.</h1>
         <br />
         <br />
-        <h1>Full Stack Web Developer</h1>
+        <h3>Full Stack Web Developer</h3>
         <HeroStack>Javascript Typescript Java Ruby</HeroStack>
         <HeroStack>React Redux D3.js NodeJS Express</HeroStack>
         <HeroStack>Docker Webpack PostgreSQL MySQL MongoDB GraphQL</HeroStack>

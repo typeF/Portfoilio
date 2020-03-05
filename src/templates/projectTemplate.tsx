@@ -7,6 +7,11 @@ import SectionTitle from "../components/sectionTitle";
 
 const ProjectContainer = styled.div`
   min-height: 100vh;
+  border: 1px solid grey;
+  background: white;
+  border-radius: 4px;
+  padding: 50px;
+  box-shadow: 12px 12px rgba(0, 0, 0, 0.4);
 `;
 
 const ProjectDiv = styled.div`

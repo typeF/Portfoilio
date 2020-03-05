@@ -20,6 +20,11 @@ const HeaderLink = styled.div`
 const StyledLink = styled.a`
   color: black;
   text-decoration: none;
+  border: 1px solid grey;
+  background: white;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 8px 8px rgba(0, 0, 0, 0.4);
 `;
 
 const Header = () => (

@@ -2,7 +2,7 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  background: #d2f5f3;
+  background: url("../images/background-tile.png");
 }
 body {
   margin: 0;

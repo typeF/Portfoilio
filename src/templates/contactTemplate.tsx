@@ -34,10 +34,6 @@ const SocialMediaA = styled.a``;
 
 const ContactForm = styled.div``;
 
-const HiddenField = styled.p`
-  display: none;
-`;
-
 const ContactFieldDiv = styled.div`
   margin-bottom: 20px;
 `;
@@ -88,33 +84,29 @@ export default function ContactTemplate() {
       <ContactDiv>
         <ContactForm>
           <form
-            name="Contact"
+            name="Contact Form"
             method="POST"
             netlify-honeypot="bot-field"
             data-netlify="true"
+            action="/submit"
           >
-            <HiddenField>
-              <label>
-                Dip into the honeypot
-                <input name="bot-field" />
-              </label>
-            </HiddenField>
+            <input type="hidden" name="bot-field" />
             <ContactFieldDiv>
               <ContactFormLabel>
                 Name:
-                <ContactFormInput type="text" name="name" />
+                <ContactFormInput type="text" name="name" required />
               </ContactFormLabel>
             </ContactFieldDiv>
             <ContactFieldDiv>
               <ContactFormLabel>
                 Email:
-                <ContactFormInput type="email" name="email" />
+                <ContactFormInput type="email" name="email" required />
               </ContactFormLabel>
             </ContactFieldDiv>
             <ContactFieldDiv>
               <ContactFormLabel>
                 Message:
-                <ContactTextArea name="message"></ContactTextArea>
+                <ContactTextArea name="message" required />
               </ContactFormLabel>
             </ContactFieldDiv>
             <ContactSubmitBtn type="submit">Submit</ContactSubmitBtn>

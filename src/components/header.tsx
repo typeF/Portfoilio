@@ -35,7 +35,7 @@ const StyledLink = styled.a`
 `;
 
 const Header = () => (
-  <HeaderWrapper>
+  <HeaderWrapper id="header">
     <HeaderDiv>
       {/* <HeaderLink>
         <StyledLink href="#about">About</StyledLink>

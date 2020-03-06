@@ -88,7 +88,7 @@ export default function ContactTemplate() {
       <ContactDiv>
         <ContactForm>
           <form
-            name="contact"
+            name="Contact"
             method="POST"
             netlify-honeypot="bot-field"
             data-netlify="true"
@@ -117,7 +117,7 @@ export default function ContactTemplate() {
                 <ContactTextArea name="message"></ContactTextArea>
               </ContactFormLabel>
             </ContactFieldDiv>
-            <ContactSubmitBtn>Submit</ContactSubmitBtn>
+            <ContactSubmitBtn type="submit">Submit</ContactSubmitBtn>
           </form>
         </ContactForm>
         <ContactSocialMedia>

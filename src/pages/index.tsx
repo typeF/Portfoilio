@@ -10,7 +10,7 @@ import ProjectTemplate from "../templates/projectTemplate";
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Frank Lam" />
     <HeroTemplate />
     {/* <AboutTemplate /> */}
     <ProjectTemplate />

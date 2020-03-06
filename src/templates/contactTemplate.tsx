@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import FadingLine from "../components/fadingline";
 import SectionTitle from "../components/sectionTitle";
+import GitHubLogo from "../components/githubLogo";
+import LinkedInLogo from "../components/linkedInLogo";
 
 const ContactContainer = styled.div`
   margin-top: 250px;
@@ -16,9 +18,18 @@ const ContactDiv = styled.div`
   display: grid;
   grid-gap: 50px;
   grid-template-columns: 1fr 1fr;
+  @media (max-width: 450px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
-const ContactSocialMedia = styled.div``;
+const ContactSocialMedia = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
+const SocialMediaA = styled.a``;
 
 const ContactForm = styled.div``;
 
@@ -108,8 +119,18 @@ export default function ContactTemplate() {
             <ContactSubmitBtn>Submit</ContactSubmitBtn>
           </form>
         </ContactForm>
+        <ContactSocialMedia>
+          <SocialMediaA href="https://github.com/typeF" target="_blank">
+            <GitHubLogo />
+          </SocialMediaA>
+          <SocialMediaA
+            href="https://linkedin.com/in/franklamfl"
+            target="_blank"
+          >
+            <LinkedInLogo />
+          </SocialMediaA>
+        </ContactSocialMedia>
       </ContactDiv>
-      <ContactSocialMedia></ContactSocialMedia>
     </ContactContainer>
   );
 }

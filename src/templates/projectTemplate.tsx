@@ -5,6 +5,10 @@ import { useStaticQuery, graphql } from "gatsby";
 import FadingLine from "../components/fadingline";
 import SectionTitle from "../components/sectionTitle";
 
+const ProjectOuterDiv = styled.div`
+  height: 17px;
+`;
+
 const ProjectContainer = styled.div`
   min-height: 100vh;
   border: 1px solid grey;
@@ -105,7 +109,10 @@ export default function ProjectTemplate() {
     return (
       <ProjectDiv className="project" key={id}>
         <ProjectImageA href={github}>
-          <ProjectImage fluid={featuredImgFluid} />
+          <ProjectImage
+            fluid={featuredImgFluid}
+            alt={`${frontmatter.title} screenshot`}
+          />
         </ProjectImageA>
         <ProjectDescription>
           <div>
@@ -124,10 +131,13 @@ export default function ProjectTemplate() {
   });
 
   return (
-    <ProjectContainer id="projects" className="blog-post-container">
-      <SectionTitle title={"Projects"} />
-      <FadingLine />
-      {projects}
-    </ProjectContainer>
+    <div>
+      <ProjectOuterDiv id="projects" />
+      <ProjectContainer className="blog-post-container">
+        <SectionTitle title={"Projects"} />
+        <FadingLine />
+        {projects}
+      </ProjectContainer>
+    </div>
   );
 }

@@ -15,7 +15,12 @@ const LinkedInLogo = () => {
     }
   `);
 
-  return <Img fixed={data.placeholderImage.childImageSharp.fixed} />;
+  return (
+    <Img
+      fixed={data.placeholderImage.childImageSharp.fixed}
+      alt="LinkedIn Logo"
+    />
+  );
 };
 
 export default LinkedInLogo;

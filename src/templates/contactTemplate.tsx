@@ -7,6 +7,7 @@ import LinkedInLogo from "../components/linkedInLogo";
 
 const ContactContainer = styled.div`
   margin-top: 250px;
+  margin-bottom: 50px;
   border: 1px solid grey;
   background: white;
   border-radius: 4px;
@@ -41,7 +42,7 @@ const ContactFieldDiv = styled.div`
   margin-bottom: 20px;
 `;
 
-const ContactFormLabel = styled.p`
+const ContactFormLabel = styled.label`
   margin-bottom: 0px;
 `;
 
@@ -99,22 +100,22 @@ export default function ContactTemplate() {
               </label>
             </HiddenField>
             <ContactFieldDiv>
-              <ContactFormLabel>Name:</ContactFormLabel>
-              <label>
+              <ContactFormLabel>
+                Name:
                 <ContactFormInput type="text" name="name" />
-              </label>
+              </ContactFormLabel>
             </ContactFieldDiv>
             <ContactFieldDiv>
-              <ContactFormLabel>Email:</ContactFormLabel>
-              <label>
+              <ContactFormLabel>
+                Email:
                 <ContactFormInput type="email" name="email" />
-              </label>
+              </ContactFormLabel>
             </ContactFieldDiv>
             <ContactFieldDiv>
-              <ContactFormLabel>Message:</ContactFormLabel>
-              <label>
+              <ContactFormLabel>
+                Message:
                 <ContactTextArea name="message"></ContactTextArea>
-              </label>
+              </ContactFormLabel>
             </ContactFieldDiv>
             <ContactSubmitBtn>Submit</ContactSubmitBtn>
           </form>

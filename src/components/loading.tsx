@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 
 const LoadingContainer = styled.div`
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
 `;
 
 const pulse = keyframes`

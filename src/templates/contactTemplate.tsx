@@ -83,7 +83,7 @@ const ContactSubmitBtn = styled.button`
 
 const SubmitResponse = styled.span`
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   font-size: 1rem;
   text-align: right;
 `;
@@ -202,12 +202,17 @@ export default function ContactTemplate() {
           </ContactForm>
         </ContactFormContainer>
         <ContactSocialMedia>
-          <SocialMediaA href="https://github.com/typeF" target="_blank">
+          <SocialMediaA
+            href="https://github.com/typeF"
+            target="_blank"
+            rel="noreferrer"
+          >
             <GitHubLogo />
           </SocialMediaA>
           <SocialMediaA
             href="https://linkedin.com/in/franklamfl"
             target="_blank"
+            rel="noreferrer"
           >
             <LinkedInLogo />
           </SocialMediaA>

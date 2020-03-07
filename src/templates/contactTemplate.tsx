@@ -4,6 +4,7 @@ import FadingLine from "../components/fadingline";
 import SectionTitle from "../components/sectionTitle";
 import GitHubLogo from "../components/githubLogo";
 import LinkedInLogo from "../components/linkedInLogo";
+import Loading from "../components/loading";
 
 const ContactContainer = styled.div`
   margin-top: 250px;
@@ -168,6 +169,7 @@ export default function ContactTemplate() {
               </ContactFormLabel>
             </ContactFieldDiv>
             <ContactSubmitBtn type="submit">Submit</ContactSubmitBtn>
+            <Loading />
             {!loading && submitResponse === "Success" && <h2>Success!</h2>}
             {!loading && submitResponse === "Failed" && <h2>Failed!</h2>}
           </form>

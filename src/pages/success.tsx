@@ -46,7 +46,9 @@ const SubmitSuccess = () => {
       <SubmitDiv>
         <SubmitContent>
           <SubmitStatus>Message Sent.</SubmitStatus>
-          <SubmitMsg>Thanks, I'll get back to you as soon as I can!</SubmitMsg>
+          <SubmitMsg>
+            Thanks, I&apos;ll get back to you as soon as I can!
+          </SubmitMsg>
           <SubmitA href="/">
             <SubmitRedirect>Back to Home</SubmitRedirect>
           </SubmitA>

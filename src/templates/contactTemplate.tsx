@@ -33,7 +33,11 @@ const ContactSocialMedia = styled.div`
 
 const SocialMediaA = styled.a``;
 
-const ContactForm = styled.div``;
+const ContactFormContainer = styled.div``;
+
+const ContactForm = styled.form`
+  position: relative;
+`;
 
 const ContactFieldDiv = styled.div`
   margin-bottom: 20px;
@@ -77,8 +81,24 @@ const ContactSubmitBtn = styled.button`
   }
 `;
 
+const SubmitResponse = styled.span`
+  display: flex;
+  justify-content: right;
+  font-size: 1rem;
+  text-align: right;
+`;
+
+const SubmitThanks = styled.p`
+  position: absolute;
+  right: 0;
+  margin-top: 12px;
+  color: #ef4d53;
+  text-align: right;
+  font-size: 0.9rem;
+`;
+
 export default function ContactTemplate() {
-  const [submitResponse, setSubmitResponse] = useState(null);
+  const [submitResponse, setSubmitResponse] = useState("");
   const [loading, setLoading] = useState(false);
   const [formValues, setFormValues] = useState({
     name: "",
@@ -122,8 +142,8 @@ export default function ContactTemplate() {
       <SectionTitle title={"Contact"} />
       <FadingLine />
       <ContactDiv>
-        <ContactForm>
-          <form
+        <ContactFormContainer>
+          <ContactForm
             name="Contact Form"
             method="POST"
             netlify-honeypot="bot-field"
@@ -168,12 +188,23 @@ export default function ContactTemplate() {
                 />
               </ContactFormLabel>
             </ContactFieldDiv>
-            <ContactSubmitBtn type="submit">Submit</ContactSubmitBtn>
-            <Loading />
-            {!loading && submitResponse === "Success" && <h2>Success!</h2>}
-            {!loading && submitResponse === "Failed" && <h2>Failed!</h2>}
-          </form>
-        </ContactForm>
+            {!loading && submitResponse === "" && (
+              <ContactSubmitBtn type="submit">Submit</ContactSubmitBtn>
+            )}
+            {loading && <Loading />}
+            {!loading && submitResponse === "Success" && (
+              <div>
+                <SubmitResponse>Message Sent.</SubmitResponse>
+                <SubmitThanks>
+                  Thanks, I&apos;ll respond as soon as I can!
+                </SubmitThanks>
+              </div>
+            )}
+            {!loading && submitResponse === "Failed" && (
+              <SubmitResponse>Error!</SubmitResponse>
+            )}
+          </ContactForm>
+        </ContactFormContainer>
         <ContactSocialMedia>
           <SocialMediaA href="https://github.com/typeF" target="_blank">
             <GitHubLogo />

@@ -1,7 +1,10 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
-const LoadingContainer = styled.div``;
+const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: right;
+`;
 
 const pulse = keyframes`
   0% {

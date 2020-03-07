@@ -91,7 +91,6 @@ const SubmitResponse = styled.span`
 const SubmitThanks = styled.p`
   position: absolute;
   right: 0;
-  margin-top: 12px;
   color: #ef4d53;
   text-align: right;
   font-size: 0.9rem;
@@ -121,11 +120,10 @@ export default function ContactTemplate() {
     })
       .then(() => {
         setSubmitResponse("Success");
-        alert("Success!");
       })
       .catch(error => {
         setSubmitResponse("Failed");
-        alert(error);
+        console.error(error);
       });
 
     setLoading(false);

@@ -143,10 +143,8 @@ export default function ContactTemplate() {
         <ContactFormContainer>
           <ContactForm
             name="Contact Form"
-            method="POST"
             netlify-honeypot="bot-field"
             data-netlify="true"
-            action="/success"
             onSubmit={handleSubmit}
           >
             <input type="hidden" name="bot-field" />

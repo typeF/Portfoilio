@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import FadingLine from "../components/fadingline";
 import SectionTitle from "../components/sectionTitle";
@@ -77,6 +77,45 @@ const ContactSubmitBtn = styled.button`
 `;
 
 export default function ContactTemplate() {
+  const [submitResponse, setSubmitResponse] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [formValues, setFormValues] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
+  const handleSubmit = event => {
+    setLoading(true);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "Contact Form", ...formValues }),
+    })
+      .then(() => {
+        setSubmitResponse("Success");
+        alert("Success!");
+      })
+      .catch(error => {
+        setSubmitResponse("Failed");
+        alert(error);
+      });
+
+    setLoading(false);
+    event.preventDefault();
+  };
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
   return (
     <ContactContainer id="contact" className="contact-container">
       <SectionTitle title={"Contact"} />
@@ -88,28 +127,49 @@ export default function ContactTemplate() {
             method="POST"
             netlify-honeypot="bot-field"
             data-netlify="true"
-            action="/submit"
+            action="/success"
+            onSubmit={handleSubmit}
           >
             <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="Contact Form" />
             <ContactFieldDiv>
               <ContactFormLabel>
                 Name:
-                <ContactFormInput type="text" name="name" required />
+                <ContactFormInput
+                  type="text"
+                  name="name"
+                  value={formValues.name}
+                  onChange={handleChange}
+                  required
+                />
               </ContactFormLabel>
             </ContactFieldDiv>
             <ContactFieldDiv>
               <ContactFormLabel>
                 Email:
-                <ContactFormInput type="email" name="email" required />
+                <ContactFormInput
+                  type="email"
+                  name="email"
+                  value={formValues.email}
+                  onChange={handleChange}
+                  required
+                />
               </ContactFormLabel>
             </ContactFieldDiv>
             <ContactFieldDiv>
               <ContactFormLabel>
                 Message:
-                <ContactTextArea name="message" required />
+                <ContactTextArea
+                  name="message"
+                  value={formValues.message}
+                  onChange={handleChange}
+                  required
+                />
               </ContactFormLabel>
             </ContactFieldDiv>
             <ContactSubmitBtn type="submit">Submit</ContactSubmitBtn>
+            {!loading && submitResponse === "Success" && <h2>Success!</h2>}
+            {!loading && submitResponse === "Failed" && <h2>Failed!</h2>}
           </form>
         </ContactForm>
         <ContactSocialMedia>

@@ -14,6 +14,9 @@ const ContactContainer = styled.div`
   border-radius: 4px;
   padding: 50px;
   box-shadow: 12px 12px rgba(0, 0, 0, 0.4);
+  @media (max-width: 450px) {
+    padding: 30px;
+  }
 `;
 
 const ContactDiv = styled.div`

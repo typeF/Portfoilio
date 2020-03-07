@@ -99,11 +99,7 @@ const SubmitThanks = styled.p`
 export default function ContactTemplate() {
   const [submitResponse, setSubmitResponse] = useState("");
   const [loading, setLoading] = useState(false);
-  const [formValues, setFormValues] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [formValues, setFormValues] = useState({});
 
   const encode = data => {
     return Object.keys(data)
@@ -142,12 +138,13 @@ export default function ContactTemplate() {
       <ContactDiv>
         <ContactFormContainer>
           <ContactForm
+            action="post"
             name="Contact Form"
-            netlify-honeypot="bot-field"
+            data-netlify-honeypot="bot-field"
             data-netlify="true"
             onSubmit={handleSubmit}
           >
-            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="bot-field" onChange={handleSubmit} />
             <input type="hidden" name="form-name" value="Contact Form" />
             <ContactFieldDiv>
               <ContactFormLabel>

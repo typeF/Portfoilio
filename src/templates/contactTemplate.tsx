@@ -204,7 +204,7 @@ export default function ContactTemplate() {
             <GitHubMark />
           </SocialMediaA>
           <SocialMediaA
-            href="https://linkedin.com/in/franklamfl"
+            href="https://linkedin.com/in/franklamFL"
             target="_blank"
             rel="noreferrer"
           >

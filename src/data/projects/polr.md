@@ -2,7 +2,7 @@
 title: "POLR"
 date: "2017-11-30"
 type: "project"
-github: "https://github.com/typef/POLR"
+github: "https://github.com/typeF/POLR"
 url: "https://sheltered-beach-92841.herokuapp.com"
 screenshot: "../../images/polr-home.png"
 techStack: "JavaScript NodeJS Express EJS Mailgun Twilio"

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import FadingLine from "../components/fadingline";
 import SectionTitle from "../components/sectionTitle";
-import GitHubLogo from "../components/githubLogo";
+import GitHubMark from "../components/githubMark";
 import LinkedInLogo from "../components/linkedInLogo";
 import Loading from "../components/loading";
 
@@ -152,7 +152,6 @@ export default function ContactTemplate() {
                 <ContactFormInput
                   type="text"
                   name="name"
-                  value={formValues.name}
                   onChange={handleChange}
                   required
                 />
@@ -164,7 +163,6 @@ export default function ContactTemplate() {
                 <ContactFormInput
                   type="email"
                   name="email"
-                  value={formValues.email}
                   onChange={handleChange}
                   required
                 />
@@ -175,7 +173,6 @@ export default function ContactTemplate() {
                 Message:
                 <ContactTextArea
                   name="message"
-                  value={formValues.message}
                   onChange={handleChange}
                   required
                 />
@@ -204,7 +201,7 @@ export default function ContactTemplate() {
             target="_blank"
             rel="noreferrer"
           >
-            <GitHubLogo />
+            <GitHubMark />
           </SocialMediaA>
           <SocialMediaA
             href="https://linkedin.com/in/franklamfl"

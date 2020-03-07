@@ -28,6 +28,9 @@ const HeroStack = styled.p`
   color: grey;
   margin-bottom: 3px;
   word-spacing: 10px;
+  @media (max-width: 450px) {
+    margin-bottom: 6px;
+  }
 `;
 
 const HeroP = styled.p`

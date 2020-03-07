@@ -4,6 +4,7 @@ import Img from "gatsby-image";
 import { useStaticQuery, graphql } from "gatsby";
 import FadingLine from "../components/fadingline";
 import SectionTitle from "../components/sectionTitle";
+import GitHubLogo from "../components/githubLogo";
 
 const ProjectOuterDiv = styled.div`
   height: 17px;
@@ -27,16 +28,23 @@ const ProjectDiv = styled.div`
 
 const ProjectDescription = styled.div`
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 0px 30px;
   grid-template-columns: 1fr 2fr;
-  grid-template-areas: "project-info project-desc";
+  grid-template-areas:
+    "project-title project-summary"
+    "project-stack project-summary"
+    "project-github project-summary";
   @media (max-width: 450px) {
     grid-gap: 0px;
-    grid-template-columns: 1fr;
+    grid-template-columns: 8fr 1fr;
     grid-template-areas:
-      "project-info"
-      "project-desc";
+      "project-title project-github"
+      "project-summary project-summary";
   }
+`;
+
+const ProjectSummary = styled.div`
+  grid-area: project-summary;
 `;
 
 const ProjectImageA = styled.a`
@@ -61,11 +69,22 @@ const StyledA = styled.a`
   text-decoration: none;
 `;
 
+const GitHubA = styled.a`
+  @media (max-width: 450px) {
+    grid-area: project-github;
+    margin-top: 7px;
+  }
+`;
+
 const StyledP = styled.p`
   color: #706e69;
   font-size: 16px;
   line-height: 18px;
   word-spacing: 6px;
+  margin-bottom: 8px;
+  @media (max-width: 450px) {
+    margin-bottom: 13px;
+  }
 `;
 
 export default function ProjectTemplate() {
@@ -104,11 +123,11 @@ export default function ProjectTemplate() {
 
   const projects = nodes.map(node => {
     const { frontmatter, id, html } = node.node;
-    const { github, techStack, screenshot } = frontmatter;
+    const { github, techStack, screenshot, url } = frontmatter;
     const featuredImgFluid = screenshot.childImageSharp.fluid;
     return (
       <ProjectDiv className="project" key={id}>
-        <ProjectImageA href={github}>
+        <ProjectImageA href={url} target="_blank" rel="norefferer">
           <ProjectImage
             fluid={featuredImgFluid}
             alt={`${frontmatter.title} screenshot`}
@@ -117,11 +136,16 @@ export default function ProjectTemplate() {
         <ProjectDescription>
           <div>
             <ProjectH1>
-              <StyledA href={github}>{frontmatter.title}</StyledA>
+              <StyledA href={url} target="_blank" rel="noreferrer">
+                {frontmatter.title}
+              </StyledA>
             </ProjectH1>
             <StyledP>{techStack}</StyledP>
           </div>
-          <div
+          <GitHubA href={github} target="_blank" rel="noreferrer">
+            <GitHubLogo />
+          </GitHubA>
+          <ProjectSummary
             className="project-content"
             dangerouslySetInnerHTML={{ __html: html }}
           />

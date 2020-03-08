@@ -4,4 +4,8 @@ My portfolio site built with [GatsbyJS](https://www.gatsbyjs.org/) and deployed 
 
 #Setup
 
-Add environment variable GOOGLE_ANALYTICS_TRACKING_ID to Netlify's environment variables
+Add environment variables to Netlify's environment variables:
+```
+GOOGLE_ANALYTICS_TRACKING_ID=YOUR_GOOGLE_ANALYTICS_ID
+NODE_ENV=production
+```

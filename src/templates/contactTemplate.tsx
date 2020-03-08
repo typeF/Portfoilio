@@ -57,6 +57,10 @@ const ContactFormInput = styled.input`
   border-bottom: 2.5px dashed grey;
   color: #ef4d53;
   width: 100%;
+  &:focus {
+    outline: none;
+    border-bottom: 2.5px dashed #ef4d53;
+  }
 `;
 
 const ContactTextArea = styled.textarea`
@@ -66,6 +70,10 @@ const ContactTextArea = styled.textarea`
   border: 2.5px dashed grey;
   border-radius: 3px;
   padding: 10px;
+  &:focus {
+    outline: none;
+    border: 2.5px dashed #ef4d53;
+  }
 `;
 
 const ContactSubmitBtn = styled.button`

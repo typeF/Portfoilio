@@ -57,6 +57,7 @@ const ContactFormInput = styled.input`
   border-bottom: 2.5px dashed grey;
   color: #ef4d53;
   width: 100%;
+  transition: border-color: 2s;
   &:focus {
     outline: none;
     border-bottom: 2.5px dashed #ef4d53;

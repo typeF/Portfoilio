@@ -55,8 +55,8 @@ export default function HeroTemplate() {
         <h3>Full Stack Web Developer</h3>
         <HeroStackDiv>
           <HeroStack>JavaScript TypeScript Java Ruby</HeroStack>
-          <HeroStack>React Vue.js NodeJS Express Redux D3.js</HeroStack>
-          <HeroStack>Docker Webpack PostgreSQL MySQL MongoDB GraphQL</HeroStack>
+          <HeroStack>React Vue.js Node.js Express Redux D3.js</HeroStack>
+          <HeroStack>Docker Webpack GraphQL PostgreSQL MySQL MongoDB</HeroStack>
         </HeroStackDiv>
       </HeroContent>
     </HeroDiv>

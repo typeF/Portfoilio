@@ -130,7 +130,11 @@ export default function ProjectTemplate() {
     const featuredImgFluid = screenshot.childImageSharp.fluid;
     return (
       <ProjectDiv className="project" key={id}>
-        <ProjectImageA href={url} target="_blank" rel="noreferrer">
+        <ProjectImageA
+          href={url !== "" ? url : "javascript:void(0)"}
+          target="_blank"
+          rel="noreferrer"
+        >
           <ProjectImage
             fluid={featuredImgFluid}
             alt={`${frontmatter.title} screenshot`}
